@@ -11,7 +11,7 @@ description: "如何联系我"
 
 ## 📧 邮箱
 
-- **个人邮箱**：[{{ 你的邮箱 }}](mailto:{{ 你的邮箱 }})
+- **个人邮箱**：[fangmierui@gmail.com](mailto:fangmierui@gmail.com)
 
 我通常会在 24 小时内回复邮件。
 
@@ -21,7 +21,7 @@ description: "如何联系我"
 
 如果你想查看我的代码项目，欢迎访问我的 GitHub 主页：
 
-- **GitHub**：[{{ 你的GitHub用户名 }}](https://github.com/{{ 你的GitHub用户名 }})
+- **GitHub**：[fangwenky](https://github.com/fangwenky)
 
 ---
 
@@ -29,7 +29,7 @@ description: "如何联系我"
 
 欢迎关注我的 B 站账号：
 
-- **Bilibili**：[{{ 你的B站名称 }}]({{ 你的B站链接 }})
+- **Bilibili**：[F_wenky](https://space.bilibili.com/1002000285)
 
 ---
 
@@ -37,9 +37,9 @@ description: "如何联系我"
 
 | 平台 | 链接 |
 |------|------|
-| GitHub | [{{ 你的GitHub用户名 }}](https://github.com/{{ 你的GitHub用户名 }}) |
-| Bilibili | [{{ 你的B站名称 }}]({{ 你的B站链接 }}) |
-| 邮箱 | [{{ 你的邮箱 }}](mailto:{{ 你的邮箱 }}) |
+| GitHub | [fangwenky](https://github.com/fangwenky) |
+| Bilibili | [F_wenky](https://space.bilibili.com/1002000285) |
+| 邮箱 | [fangmierui@gmail.com](mailto:fangmierui@gmail.com) |
 
 ---
 
