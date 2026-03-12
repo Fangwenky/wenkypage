@@ -1,8 +1,8 @@
 # Hugo 构建输出目录
 /public/
 
-# 主题文件（如果使用 git 子模块）
-/themes/
+# 主题文件（如果使用 git 子模块，需要取消注释）
+# /themes/
 
 # 资源目录（Hugo 生成的资源）
 /resources/
