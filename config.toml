@@ -1,0 +1,152 @@
+# ============================================================
+# 配置文件 - Hugo + Congo 主题配置
+# ============================================================
+# 复制此文件到你的 Hugo 项目根目录，重命名为 config.toml
+# 更多配置请参考：https://jpanther.github.io/congo/docs/configuration
+
+baseURL = "https://fangwenky.github.io/wenkypage/"
+languageCode = "zh-cn"
+title = "{{ 你的名字 }}的个人主页"
+theme = "congo"
+
+# ============================================================
+# 站点参数
+# ============================================================
+[params]
+  # 你的名字（显示在首页）
+  author = "{{ 你的名字 }}"
+  
+  # 网站描述
+  description = "{{ 你的个人简介 }}"
+  
+  # 博客标题（可选，覆盖全局 title）
+  # title = "{{ 你的名字 }}的博客"
+  
+  # 主页显示的最新文章数量
+  recentPostsLimit = 6
+  
+  # 默认主题：light, dark 或 "auto"（跟随系统）
+  defaultTheme = "dark"
+  
+  # 是否显示主题切换按钮
+  showThemeToggle = true
+  
+  # 是否启用搜索功能（需要安装 Fuse.js）
+  enableSearch = true
+  
+  # 是否启用代码复制按钮
+  enableCodeCopy = true
+  
+  # 启用数学公式支持（需要安装 KaTeX 或 MathJax）
+  # enableLaTeX = true
+  
+  # 启用图表支持（需要安装 Mermaid）
+  # enableMermaid = true
+  
+  #社交链接（在页脚显示）
+  [params.social]
+    github = "{{ 你的GitHub用户名 }}"
+    # bilibili = "{{ 你的B站UID }}"
+    # twitter = "{{ 你的Twitter用户名 }}"
+    # email = "{{ 你的邮箱 }}"
+    # rss = true
+
+# ============================================================
+# 导航菜单
+# ============================================================
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于我"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "projects"
+  name = "项目展示"
+  url = "/projects/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "contact"
+  name = "联系方式"
+  url = "/contact/"
+  weight = 4
+
+# ============================================================
+# 文章列表页面配置
+# ============================================================
+[permalinks]
+  posts = "/posts/:year/:month/:slug/"
+  page = "/:slug/"
+
+# ============================================================
+# 输出配置
+# ============================================================
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# ============================================================
+# 隐私设置（可选）
+# ============================================================
+[privacy]
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# ============================================================
+# 统计（可选，如需启用可添加以下配置）
+# ============================================================
+# [services]
+#   [services.googleAnalytics]
+#     id = "G-XXXXXXXXXX"
+
+# ============================================================
+# 高级功能（可选）
+# ============================================================
+[markup]
+  # 代码高亮配置
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    tabWidth = 4
+  
+  # Markdown 扩展（需要安装对应插件）
+  # [markup.goldmark]
+  #   [markup.goldmark.extensions]
+  #     definitionList = true
+  #     footnote = true
+  #     strikethrough = true
+  #     table = true
+  #     taskList = true
+  #   [markup.goldmark.renderer]
+  #     unsafe = true
+
+# ============================================================
+# 评论系统配置（Waline）
+# ============================================================
+[params.waline]
+  # Waline 评论服务配置
+  # 请替换为你的 Waline 服务地址
+  serverURL = "https://your-waline-service.vercel.app"
+  
+  # 评论框显示的emoji
+  emoji = ["https://unpkg.com/@waline/emojis@1.1.0/weibo"]
+  
+  # 必填项配置
+  requiredMeta = ["nick", "mail"]
+  
+  # 是否启用登录功能
+  login = "enable"
+  
+  # 评论字数限制
+  wordLimit = 1000
+  
+  # 每页评论数
+  pageSize = 10

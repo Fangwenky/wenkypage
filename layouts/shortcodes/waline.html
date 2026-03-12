@@ -1,0 +1,90 @@
+{{/*
+  Waline 评论系统短代码
+  
+  使用方法：
+  {{< waline >}}
+  
+  或带有自定义配置：
+  {{< waline serverURL="https://your-app.vercel.app" >}}
+  
+  配置参数：
+  - serverURL: Waline 服务地址（必填）
+  - emoji: 表情包配置
+  - requiredMeta: 必填项
+  - wordLimit: 评论字数限制
+  - pageSize: 每页评论数
+*/}}
+
+{{- $serverURL := .Get "serverURL" | default (site.Params.waline.serverURL) -}}
+{{- $emoji := .Get "emoji" | default (default (site.Params.waline.emoji) (slice "https://unpkg.com/@waline/emojis@1.1.0/weibo")) -}}
+{{- $requiredMeta := .Get "requiredMeta" | default (default (site.Params.waline.requiredMeta) (slice "nick" "mail")) -}}
+{{- $login := .Get "login" | default (default (site.Params.waline.login) "enable") -}}
+{{- $wordLimit := .Get "wordLimit" | default (default (site.Params.waline.wordLimit) 1000) -}}
+{{- $pageSize := .Get "pageSize" | default (default (site.Params.waline.pageSize) 10) -}}
+
+<!-- Waline 评论区域 -->
+<div id="waline-comment"></div>
+
+<!-- 引入 Waline -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css"/>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.mjs';
+
+  init({
+    el: '#waline-comment',
+    serverURL: '{{ $serverURL }}',
+    emoji: {{ $emoji }},
+    requiredMeta: {{ $requiredMeta }},
+    login: '{{ $login }}',
+    wordLimit: {{ $wordLimit }},
+    pageSize: {{ $pageSize }},
+    
+    // 自定义配置（可选）
+    locale: {
+      placeholder: '写下你的评论吧...',
+      sofa: '暂无评论，快来抢沙发~',
+      submit: '提交评论',
+      reply: '回复',
+      cancelReply: '取消回复',
+      confirm: '确认',
+      cancel: '取消',
+      placeholderNick: '昵称（必填）',
+      placeholderMail: '邮箱（必填）',
+      placeholderLink: '网址（可选）',
+      loading: '加载中...',
+      error: '评论失败，请稍后重试',
+      mailError: '邮箱地址格式错误',
+      mailPlaceholder: '请输入邮箱地址',
+      nickError: '昵称至少2个字符',
+      nickPlaceholder: '请输入昵称',
+      wordHint: '评论字数应在 {min} 到 {max} 之间',
+    },
+    
+    // 高级配置（可选）
+    meta: ['nick', 'mail', 'link'],
+    commentSorting: 'latest',
+    copyright: true,
+    readonly: false,
+    // recaptchaV3Key: 'your-recaptcha-v3-key',
+    // turnstileKey: 'your-turnstile-key',
+  });
+</script>
+
+<style>
+#waline-comment {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--color-neutral-100);
+  border-radius: 8px;
+}
+
+[data-theme="dark"] #waline-comment {
+  background: var(--color-neutral-900);
+}
+
+@media (max-width: 640px) {
+  #waline-comment {
+    padding: 1rem;
+  }
+}
+</style>

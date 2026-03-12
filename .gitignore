@@ -1,0 +1,33 @@
+# Hugo 构建输出目录
+/public/
+
+# 主题文件（如果使用 git 子模块）
+/themes/
+
+# 资源目录（Hugo 生成的资源）
+/resources/
+
+# 临时文件
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE 文件
+.vscode/
+.idea/
+*.sublime-*
+
+# Node/npm（如果有）
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python（如果有）
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 环境变量文件
+.env
+.env.local
