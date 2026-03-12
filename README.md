@@ -1,4 +1,4 @@
-# {{ 你的名字 }}的个人主页
+# F_wenky的个人主页
 
 基于 Hugo + Congo 主题构建的轻量级个人主页，适配 1C1G 服务器部署。
 
@@ -22,16 +22,16 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/{{ 你的GitHub用户名 }}/wenkypage.git
+git clone https://github.com/Fangwenky/wenkypage.git
 cd wenkypage
 ```
 
 ### 2. 安装主题
 
-Congo 主题作为 Git 子模块安装：
+Congo 主题已作为 Git 子模块包含在内：
 
 ```bash
-git submodule add https://github.com/jpanther/congo.git themes/congo
+git submodule update --init --recursive
 ```
 
 ### 3. 本地预览
@@ -59,15 +59,16 @@ hugo
 ```toml
 baseURL = "https://your-domain.com/"
 languageCode = "zh-cn"
-title = "你的名字"
+title = "F_wenky"
 
 [params]
-  author = "你的名字"
+  author = "F_wenky"
   description = "你的个人简介"
   
   [params.social]
-    github = "你的GitHub用户名"
-    email = "你的邮箱"
+    github = "fangwenky"
+    bilibili = "1002000285"
+    email = "fangmierui@gmail.com"
 ```
 
 ### 2. 修改个人信息
@@ -104,6 +105,8 @@ wenkypage/
 │   └── shortcodes/     # 短代码
 │       └── waline.html # Waline 评论短代码
 ├── static/             # 静态资源
+│   └── images/         # 图片资源
+│       └── avatar.jpg  # 头像
 ├── themes/             # 主题文件
 └── .gitignore         # Git 忽略文件
 ```
@@ -191,6 +194,20 @@ sudo systemctl reload nginx
 | wordLimit | 评论字数限制 | 1000 |
 | pageSize | 每页评论数 | 10 |
 
+## 👤 关于我
+
+- 🔭 我目前正在学习人工智能
+- 🌱 我目前在学习 Python, 深度学习
+- 👯 我希望能够掌握各种有趣的技术
+- 🤔 我正在寻找更多有意思的项目
+- 💬 欢迎通过下方的联系方式与我交流
+
+### 联系方式
+
+- 📧 邮箱：fangmierui@gmail.com
+- 🐙 GitHub：[fangwenky](https://github.com/fangwenky)
+- 🅱️ Bilibili：[F_wenky](https://space.bilibili.com/1002000285)
+
 ## 🤝 贡献
 
 欢迎提交 Issue 和 Pull Request！
@@ -201,4 +218,4 @@ MIT License - 欢迎自由使用和修改！
 
 ---
 
-如有问题，欢迎在 [GitHub Issues](https://github.com/{{ 你的GitHub用户名 }}/wenkypage/issues) 中提出。
+如有问题，欢迎在 [GitHub Issues](https://github.com/Fangwenky/wenkypage/issues) 中提出。
